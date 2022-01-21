@@ -9,6 +9,8 @@ const { file } = require('tmp');
 const questions = ['Project title:', 'Description:', 'Installation', 'Usage:', 'Contributing:', 'Tests:', 'License:', 'Github Username:', 'Email:'];
 const readMe = './testreadme.md';
 
+const licenses = ['Apache License 2.0', 'BSD 3', 'BSD-2', 'GNU GPL', 'GNU LGPL', 'MIT']
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -56,7 +58,8 @@ function init() {
             message: questions[5]
         },
         {
-            type: 'input',
+            type: 'checkbox',
+            choices: licenses,
             name: 'question7',
             message: questions[6]
         },
@@ -75,11 +78,7 @@ function init() {
     .then((answers) => {
         // Use user feedback for... whatever!!
         console.log(answers.question1);
-        writeToFile(readMe, `# ${answers.question1}\n\n## Description\n\n${answers.question2}\n\n## Table of contents\n- [Installation](#Installation)\n- ` +
-                    `[Usage](#Usage)\n- Credits\n- License` + `\n## Installation\n\n${answers.question3}\n\n## Usage\n\n${answers.question4}\n\nCredits` + 
-                    `\n${answers.question5}\n\n## License\n${answers.question6}\n\n ## Badges\n${gm.renderLicenseBadge()}\n\n## Questions\n${answers.question7}` +
-                    `\n${answers.question8}`);
-
+        writeToFile(readMe, gm.generateMarkdown(answers));
     })
     .catch((error) => {
         if (error.isTtyError) {
