@@ -14,6 +14,21 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  console.log(data.question7);
+  if (data.question7 == 'Apache License 2.0') {
+    data.question7 = 'https://img.shields.io/crates/l/rustc-serialize';
+  } else if (data.question7 == 'MIT') {
+    data.question7 = 'https://img.shields.io/apm/l/vim-mode';
+  } else if (data.question7 == 'BSD 3') {
+    data.question7 = 'https://img.shields.io/pypi/l/Django';
+  } else if (data.question7 == 'GNU GPL') {
+    data.question7 = 'https://img.shields.io/badge/License-GPL-green';
+  }else if (data.question7 == 'GNU LGPL') {
+    data.question7 = 'https://img.shields.io/badge/License-LGPL-green';
+  } else {
+    data.question7 = "Choose one license";
+  }
+  console.log(data.question7);
   return `
 # ${data.question1}
 
@@ -62,7 +77,7 @@ The last section of a good README is a license. This lets other developers know 
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+![badge](${data.question7})
 
 Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 

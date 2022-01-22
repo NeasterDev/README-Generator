@@ -9,7 +9,7 @@ const { file } = require('tmp');
 const questions = ['Project title:', 'Description:', 'Installation', 'Usage:', 'Contributing:', 'Tests:', 'License:', 'Github Username:', 'Email:'];
 const readMe = './testreadme.md';
 
-const licenses = ['Apache License 2.0', 'BSD 3', 'BSD-2', 'GNU GPL', 'GNU LGPL', 'MIT']
+const licenses = ['Apache License 2.0', 'BSD 3', 'GNU GPL', 'GNU LGPL', 'MIT']
 
 
 // TODO: Create a function to write README file
