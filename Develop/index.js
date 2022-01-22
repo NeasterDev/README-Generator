@@ -7,7 +7,7 @@ const { file } = require('tmp');
 
 // TODO: Create an array of questions for user input
 const questions = ['Project title:', 'Description:', 'Installation:', 'Usage:', 'Contributing:', 'Tests:', 'License:', 'Github Username:', 'Email:'];
-const readMe = './testreadme.md';
+const readMe = '../README.md';
 
 const licenses = ['Apache License 2.0', 'BSD 3', 'GNU GPL', 'GNU LGPL', 'MIT']
 
