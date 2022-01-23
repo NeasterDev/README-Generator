@@ -24,6 +24,8 @@ npm install
 
 node index
 
+[Click here for a video on how to use the application](https://watch.screencastify.com/v/bEYRMsZnHyLTeV7Smaq7)
+
 
 ## License
 
